@@ -214,7 +214,24 @@ section{position:relative}
 #cta{padding:120px 0;background:var(--bg2);border-top:1px solid var(--line)}
 .cta{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
 .cta h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4vw,50px);line-height:1.5;letter-spacing:.03em;margin-bottom:20px}
-.cta p{color:var(--ink2);max-width:28em}
+.cta__h{font-size:clamp(25px,3vw,38px)!important;line-height:1.6!important}
+#cta{background:radial-gradient(ellipse 60% 70% at 18% 30%,rgba(217,160,77,.10),transparent 70%),var(--bg2)}
+.steam{width:96px;height:auto;margin:0 0 22px;overflow:visible}
+.steam path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.steam .cup{stroke:var(--gold);stroke-width:2.5}
+.steam .st1,.steam .st2,.steam .st3{stroke:var(--ink2);stroke-width:2.5;opacity:.0;animation:steam 5.5s ease-in-out infinite}
+.steam .st2{animation-delay:1.6s}.steam .st3{animation-delay:3.2s}
+@keyframes steam{0%{opacity:0;transform:translateY(8px)}30%{opacity:.75}100%{opacity:0;transform:translateY(-10px)}}
+.cta__pre{font-family:var(--serif);color:var(--gold);font-size:15px;letter-spacing:.08em;margin-bottom:12px!important}
+.cta__story{font-family:var(--serif);font-size:clamp(18px,2vw,22px);line-height:2;color:var(--ink)!important;margin:22px 0 14px}
+.cta__l p{margin-bottom:14px}
+.cta__pts{list-style:none;margin-top:26px;border-top:1px solid var(--line)}
+.cta__pts li{padding:14px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2);line-height:1.8}
+.cta__pts b{display:block;font-family:var(--serif);font-size:16.5px;color:var(--ink);margin-bottom:2px}
+.cta .lead{position:sticky;top:96px}
+.lead__hd{font-family:var(--serif);font-size:19px;margin-bottom:18px}
+.lead__sub{margin-top:12px;font-size:13px;color:var(--ink3);text-align:center}
+.cta p{color:var(--ink2);max-width:30em}
 .lead{background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:32px}
 .lead label{display:block;font-size:13.5px;color:var(--ink2);margin-bottom:6px}
 .lead input,.lead select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:4px;padding:13px 14px;margin-bottom:18px}
@@ -229,6 +246,7 @@ section{position:relative}
 
 @media(max-width:1000px){
   .hero__grid,.con,.st,.shop,.cta{grid-template-columns:1fr;gap:48px}
+  .cta .lead{position:static}
   .jr__row{grid-template-columns:56px 1fr;gap:10px 20px}
   .jr__d,.jr__links{grid-column:2}
   .pf{grid-template-columns:1fr}
@@ -263,7 +281,7 @@ section{position:relative}
 </style>
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "焙煎ノート", "url": "https://YOUR-DOMAIN.example/", "description": "珈琲が一杯のカップになるまでを深く読み解く、自家焙煎の編集コラム。", "inLanguage": "ja"}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "「深煎りはカフェインが少ない」は本当ですか？", "acceptedAnswer": {"@type": "Answer", "text": "カフェイン自体は高温に強く、焙煎による分解はごくわずかとされます。豆の重量あたりでは焙煎度による差は大きくありません。ただし深煎りは豆が膨らんで軽くなるため、スプーンなど同じ体積で量ると重量は少なくなりやすく、結果として差が出ることがあります。正確に比べたいときは、重量で量るのがおすすめです。"}}, {"@type": "Question", "name": "焙煎した豆は、いつまでに飲めばいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "焙煎日から2週間程度が飲み頃のピークとされることが多いですが、焙煎度や豆の種類によって幅があります。「いつ焼かれた豆か」を意識することが、一杯の質を左右します。"}}, {"@type": "Question", "name": "冷蔵庫や冷凍庫で保存してもいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "選択肢ではありますが、出し入れの際の温度差で容器内に結露が生じ、かえって劣化を早める場合があります。使い切れる量をこまめに購入し、直射日光の当たらない常温の暗所で、密閉できる容器に入れるのが最もシンプルで確実です。"}}, {"@type": "Question", "name": "焙煎のあとに、なぜハンドピックが必要なのですか？", "acceptedAnswer": {"@type": "Answer", "text": "高温の焙煎工程を経ると、焼けムラのある豆や割れた豆など、新たな欠点豆が生まれます。細かな色ムラや焼け方の違いは、今も熟練した人の目に頼る部分が大きく、この工程を省かないことが雑味のない一杯を支えています。"}}, {"@type": "Question", "name": "はじめての一杯には、どの豆がおすすめですか？", "acceptedAnswer": {"@type": "Answer", "text": "ヤキマメヤ店主の渡部さんは、看板ブレンドの「市が尾ブレンド」からの入口を勧めています。ブラジル・コロンビア・グァテマラの3産地を個別に焙煎してから合わせた、中煎り（シティーロースト）のバランスのよい一杯です。豆のまま・粉挽きの両方から選べます。"}}, {"@type": "Question", "name": "会員登録をすると、何が届きますか？", "acceptedAnswer": {"@type": "Answer", "text": "ヤキマメヤオーナーコラムを、いち早くお届けします。焙煎ノートは毎週金曜に更新しています。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "「深煎りはカフェインが少ない」は本当ですか？", "acceptedAnswer": {"@type": "Answer", "text": "カフェイン自体は高温に強く、焙煎による分解はごくわずかとされます。豆の重量あたりでは焙煎度による差は大きくありません。ただし深煎りは豆が膨らんで軽くなるため、スプーンなど同じ体積で量ると重量は少なくなりやすく、結果として差が出ることがあります。正確に比べたいときは、重量で量るのがおすすめです。"}}, {"@type": "Question", "name": "焙煎した豆は、いつまでに飲めばいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "焙煎日から2週間程度が飲み頃のピークとされることが多いですが、焙煎度や豆の種類によって幅があります。「いつ焼かれた豆か」を意識することが、一杯の質を左右します。"}}, {"@type": "Question", "name": "冷蔵庫や冷凍庫で保存してもいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "選択肢ではありますが、出し入れの際の温度差で容器内に結露が生じ、かえって劣化を早める場合があります。使い切れる量をこまめに購入し、直射日光の当たらない常温の暗所で、密閉できる容器に入れるのが最もシンプルで確実です。"}}, {"@type": "Question", "name": "焙煎のあとに、なぜハンドピックが必要なのですか？", "acceptedAnswer": {"@type": "Answer", "text": "高温の焙煎工程を経ると、焼けムラのある豆や割れた豆など、新たな欠点豆が生まれます。細かな色ムラや焼け方の違いは、今も熟練した人の目に頼る部分が大きく、この工程を省かないことが雑味のない一杯を支えています。"}}, {"@type": "Question", "name": "はじめての一杯には、どの豆がおすすめですか？", "acceptedAnswer": {"@type": "Answer", "text": "ヤキマメヤ店主の渡部さんは、看板ブレンドの「市が尾ブレンド」からの入口を勧めています。ブラジル・コロンビア・グァテマラの3産地を個別に焙煎してから合わせた、中煎り（シティーロースト）のバランスのよい一杯です。豆のまま・粉挽きの両方から選べます。"}}, {"@type": "Question", "name": "メルマガに登録すると、何が届きますか？", "acceptedAnswer": {"@type": "Answer", "text": "ヤキマメヤオーナーコラムを、いち早くお届けします。焙煎ノートは毎週金曜に更新しています。"}}]}</script>
 </head>
 <body>
 <header class="hd" id="top">
@@ -275,7 +293,7 @@ section{position:relative}
     <nav class="hd__nav" id="hdNav" aria-label="メインメニュー"><a href="#concept">コンセプト</a><a href="#journey">一杯までの工程</a><a href="#story">店主の物語</a><a href="#columns">コラム</a><a href="#podcast">ポッドキャスト</a><a href="#asmr">焙煎ASMR</a><a href="#guide">選び方</a><a href="#faq">よくある質問</a></nav>
     <div class="hd__cta">
       <a class="btn btn--ghost btn--sm hd__store" href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">オンラインストア</a>
-      <a class="btn btn--gold btn--sm" href="#cta">会員登録</a>
+      <a class="btn btn--gold btn--sm" href="#cta">【無料】メルマガ登録</a>
       <button class="hd__burger" id="hdBurger" aria-expanded="false" aria-controls="hdNav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -290,7 +308,7 @@ section{position:relative}
       <p class="hero__sub">直火の轟音、ハンドピックの静寂。生豆が一杯のカップになるまでの全工程を、<strong>科学と職人技の両面から深く読み解きます。</strong></p>
       <div class="hero__act">
         <a class="btn btn--gold" href="#columns">コラムを読む</a>
-        <a class="btn btn--ghost" href="#cta">会員登録する</a>
+        <a class="btn btn--ghost" href="#cta">【無料】メルマガ登録</a>
       </div>
       <div class="hero__stats">
         <div class="stat"><b>12<i>本</i></b><span>公開中のコラム</span></div>
@@ -579,32 +597,49 @@ section{position:relative}
 <details><summary>冷蔵庫や冷凍庫で保存してもいいですか？</summary><div class="a"><p>選択肢ではありますが、出し入れの際の温度差で容器内に結露が生じ、かえって劣化を早める場合があります。使い切れる量をこまめに購入し、直射日光の当たらない常温の暗所で、密閉できる容器に入れるのが最もシンプルで確実です。 <a href="column/bean-storage/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
 <details><summary>焙煎のあとに、なぜハンドピックが必要なのですか？</summary><div class="a"><p>高温の焙煎工程を経ると、焼けムラのある豆や割れた豆など、新たな欠点豆が生まれます。細かな色ムラや焼け方の違いは、今も熟練した人の目に頼る部分が大きく、この工程を省かないことが雑味のない一杯を支えています。 <a href="column/handpick/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
 <details><summary>はじめての一杯には、どの豆がおすすめですか？</summary><div class="a"><p>ヤキマメヤ店主の渡部さんは、看板ブレンドの「市が尾ブレンド」からの入口を勧めています。ブラジル・コロンビア・グァテマラの3産地を個別に焙煎してから合わせた、中煎り（シティーロースト）のバランスのよい一杯です。豆のまま・粉挽きの両方から選べます。 <a href="column/ichigao-blend-signature/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
-<details><summary>会員登録をすると、何が届きますか？</summary><div class="a"><p>ヤキマメヤオーナーコラムを、いち早くお届けします。焙煎ノートは毎週金曜に更新しています。</p></div></details>
+<details><summary>メルマガに登録すると、何が届きますか？</summary><div class="a"><p>ヤキマメヤオーナーコラムを、いち早くお届けします。焙煎ノートは毎週金曜に更新しています。</p></div></details>
     </div>
   </div>
 </section>
 
 <section id="cta">
   <div class="wrap cta">
-    <div>
-      <h2>一杯の珈琲に、<br>もっと深く出会う。</h2>
-      <p>焙煎ノートに会員登録すると、ヤキマメヤオーナーコラムをいち早くお届けします。毎週金曜更新。</p>
+    <div class="cta__l">
+      <svg class="steam" viewBox="0 0 120 110" aria-hidden="true" focusable="false">
+        <path class="st1" d="M40 46 C32 36 48 30 40 18 C34 9 44 4 42 -4"/>
+        <path class="st2" d="M60 46 C52 34 70 28 60 14 C54 5 64 0 62 -8"/>
+        <path class="st3" d="M80 46 C72 36 88 30 80 18 C74 9 84 4 82 -4"/>
+        <path class="cup" d="M22 56 H98 V72 C98 90 84 102 60 102 C36 102 22 90 22 72 Z"/>
+        <path class="cup" d="M98 62 H106 C114 62 114 82 100 82"/>
+      </svg>
+      <p class="cta__pre">いつもの一杯が、少しだけ特別になる。</p>
+      <h2 class="cta__h">【無料】プロが教える美味しい珈琲の作り方＆焙煎の極意メルマガ登録</h2>
+      <p class="cta__story">朝、湯気の向こうに立ちのぼる香り。<br>ひと口めに、ふっと肩の力が抜ける、あの瞬間。</p>
+      <p>その一杯を、あなた自身の手で、もっとおいしくできるとしたら。</p>
+      <p>火を見つめ、豆の声に耳をすませてきた人だけが知っている、淹れ方と焙煎の「本当のところ」。ヤキマメヤのオーナーが、いま伝えたいことを、毎週金曜、あなたの受信箱にそっと置いていきます。</p>
+      <ul class="cta__pts">
+        <li><b>「おいしい」の理由が、わかる。</b>湯温、蒸らし、挽き目。ほんの少しの違いが、なぜ味を変えるのか。</li>
+        <li><b>焙煎の音と火加減を、想像できる。</b>1ハゼ、2ハゼ。一釜に込められた、職人の判断の裏側へ。</li>
+        <li><b>読み終えたら、珈琲を淹れたくなる。</b>今日の一杯が、ちょっとしたごほうびに変わります。</li>
+      </ul>
     </div>
     <form class="lead" id="leadForm" data-endpoint="https://formsubmit.co/ajax/ykfuruya0703@gmail.com" novalidate>
-      <label for="lf-mail">メールアドレス</label>
+      <p class="lead__hd">最初の一通を、お届けします。</p>
+      <label for="lf-mail">あなたのメールアドレス</label>
       <input id="lf-mail" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
-      <label for="lf-int">いちばん読みたいテーマ（任意）</label>
+      <label for="lf-int">いちばん知りたいこと（任意）</label>
       <select id="lf-int" name="interest">
         <option value="">選ばない</option>
         <option>焙煎技術</option><option>生豆・産地</option><option>抽出と保存</option><option>焙煎士インタビュー</option>
       </select>
-      <input type="hidden" name="_subject" value="【焙煎ノート】会員登録">
+      <input type="hidden" name="_subject" value="【焙煎ノート】メルマガ登録">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
       <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
-      <button type="submit" class="btn btn--gold">会員登録する</button>
+      <button type="submit" class="btn btn--gold">【無料】おいしい一杯への扉を、ひらく</button>
+      <p class="lead__sub">ご登録は、ものの1分。あなたの珈琲時間が、今日から少し変わります。</p>
       <p class="lead__st" id="leadSt" role="status" aria-live="polite"></p>
-      <p class="lead__alt">豆をお探しの方は <a href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">ヤキマメヤ オンラインストア</a> へ。</p>
+      <p class="lead__alt">豆をお探しの方は、<a href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">ヤキマメヤ オンラインストア</a> へ。</p>
     </form>
   </div>
 </section>
@@ -636,7 +671,7 @@ section{position:relative}
     <div>
       <h4>このサイト</h4>
       <ul>
-        <li><a href="#cta">会員登録</a></li>
+        <li><a href="#cta">【無料】メルマガ登録</a></li>
         <li><a href="#faq">よくある質問</a></li>
       </ul>
     </div>
@@ -766,7 +801,7 @@ document.addEventListener('keydown',function(ev){if(ev.key==='Escape')set(false)
   upd();
 })();
 
-/* --- 会員登録フォーム --- */
+/* --- メルマガ登録フォーム --- */
 (function(){
   var f=document.getElementById('leadForm');if(!f)return;
   var st=document.getElementById('leadSt'),ENDPOINT=f.getAttribute('data-endpoint')||'';
@@ -774,8 +809,8 @@ document.addEventListener('keydown',function(ev){if(ev.key==='Escape')set(false)
   function sayHtml(h,c){st.innerHTML=h;st.className='lead__st '+c}
   function mailtoLink(){
     var em=(f.querySelector('[name=email]').value||'').trim(),it=(f.querySelector('[name=interest]').value||'');
-    var body='会員登録を希望します。\nメールアドレス: '+em+'\n読みたいテーマ: '+(it||'指定なし');
-    return 'mailto:'+MAIL+'?subject='+encodeURIComponent('【焙煎ノート】会員登録')+'&body='+encodeURIComponent(body);
+    var body='メルマガ登録を希望します。\nメールアドレス: '+em+'\n読みたいテーマ: '+(it||'指定なし');
+    return 'mailto:'+MAIL+'?subject='+encodeURIComponent('【焙煎ノート】メルマガ登録')+'&body='+encodeURIComponent(body);
   }
   f.addEventListener('submit',function(ev){
     ev.preventDefault();
@@ -790,7 +825,7 @@ document.addEventListener('keydown',function(ev){if(ev.key==='Escape')set(false)
       .then(function(r){return r.json().catch(function(){return {}}).then(function(d){return {ok:r.ok,d:d}})})
       .then(function(x){
         var ok=x.ok&&(x.d.success===true||x.d.success==='true');
-        if(ok){say('登録を受け付けました。ヤキマメヤオーナーコラムのお届けをお待ちください。','ok');f.reset()}
+        if(ok){say('ご登録ありがとうございます。ヤキマメヤの香りとともに、最初のコラムをお届けします。どうぞ、お楽しみに。','ok');f.reset()}
         else{
           var m=(x.d&&x.d.message)||'';
           if(/web server/i.test(m)){sayHtml('Webサーバー経由で開いていないため送信できません。公開URLか、ローカルサーバー上で開いてください。'+(MAIL?' <a href="'+mailtoLink()+'" style="color:var(--gold);text-underline-offset:4px">メールソフトで登録する</a>':''),'ng')}

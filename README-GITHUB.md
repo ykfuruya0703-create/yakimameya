@@ -16,7 +16,7 @@
 
 ## 公開後に必要な設定
 - `sitemap.xml`、`robots.txt`、各ページの canonical にある `https://YOUR-DOMAIN.example` を、公開URLに置き換えてください（テキスト検索置換で可）。
-- 会員登録フォームは、公開URLから初回送信すると、ykfuruya0703@gmail.com にFormSubmitの有効化メールが届きます。リンクをクリックして有効化してください。
+- メルマガ登録フォームは、公開URLから初回送信すると、ykfuruya0703@gmail.com にFormSubmitの有効化メールが届きます。リンクをクリックして有効化してください。
 
 ## 補足
 - EP.07の音声は、アップ上限に収めるため、元より圧縮（AAC 96kbps）しています。
