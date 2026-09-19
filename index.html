@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>焙煎ノート | 珈琲焙煎の編集コラム ― 生豆から一杯まで、深く読み解く</title>
+<meta name="description" content="生豆の目利き、直火焙煎、ハンドピック、抽出、保存まで。珈琲が一杯のカップになるまでを深く読み解く、自家焙煎の編集コラム「焙煎ノート」。コラム12本とポッドキャストを公開中。">
+<link rel="canonical" href="https://YOUR-DOMAIN.example/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="焙煎ノート | 珈琲焙煎の編集コラム">
+<meta property="og:description" content="生豆の目利きから直火焙煎、ハンドピック、抽出、保存まで。一杯のカップになるまでを深く読み解く編集コラム。">
+<meta property="og:url" content="https://YOUR-DOMAIN.example/">
+<meta property="og:site_name" content="焙煎ノート">
+<meta property="og:image" content="https://YOUR-DOMAIN.example/images/storefront.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#140c07">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+section{position:relative}
+.sec{padding:112px 0}
+.sec--alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* HERO */
+#hero{padding:calc(var(--hd) + 72px) 0 88px;background:radial-gradient(ellipse 70% 60% at 82% 30%,rgba(217,160,77,.07),transparent 70%)}
+.hero__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:center}
+.hero__pre{font-size:14px;color:var(--ink2);margin-bottom:22px;letter-spacing:.04em}
+.hero__h1{font-family:var(--serif);font-weight:700;font-size:clamp(38px,5vw,66px);line-height:1.3;letter-spacing:.04em;margin-bottom:28px;white-space:nowrap}
+.hero__sub{color:var(--ink2);max-width:27em;margin-bottom:34px}
+.hero__sub strong{color:var(--ink);font-weight:500}
+.hero__act{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px}
+.hero__stats{display:flex;gap:36px;padding-top:26px;border-top:1px solid var(--line)}
+.stat b{display:block;font-family:var(--serif);font-size:34px;line-height:1.2;font-weight:700}
+.stat b i{font-style:normal;font-size:15px;font-weight:500;margin-left:3px;color:var(--ink2)}
+.stat span{font-size:12.5px;color:var(--ink3)}
+
+/* 焙煎記録票 */
+.log{background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:22px 24px 24px}
+.log__hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding-bottom:14px;margin-bottom:8px;border-bottom:1px solid var(--line)}
+.log__hd h2{font-family:var(--serif);font-size:18px;font-weight:700;letter-spacing:.05em}
+.log__hd span{font-size:12.5px;color:var(--ink3)}
+.log svg{width:100%;height:auto;display:block;overflow:visible}
+.log .gl{stroke:var(--line);stroke-width:1}
+.log .ax{fill:var(--ink3);font-size:11.5px;font-family:var(--sans)}
+.log .axt{fill:var(--ink3);font-size:11.5px;font-family:var(--sans)}
+.log .curve-bg{fill:none;stroke:var(--line2);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.log .curve{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.log .ev circle{fill:var(--panel);stroke:var(--ink2);stroke-width:1.5}
+.log .ev text{fill:var(--ink);font-size:12.5px;font-family:var(--sans);font-weight:500;paint-order:stroke;stroke:var(--panel);stroke-width:4px;stroke-linejoin:round}
+.log .drop line{stroke:var(--gold);stroke-width:1;stroke-dasharray:3 4}
+.log .drop circle{fill:var(--gold);stroke:var(--panel);stroke-width:3}
+.log .drop text{fill:var(--gold);font-size:12.5px;font-weight:700;font-family:var(--sans);paint-order:stroke;stroke:var(--panel);stroke-width:4px}
+.ctl{margin-top:14px;padding-top:18px;border-top:1px solid var(--line)}
+.ctl label{display:flex;justify-content:space-between;font-size:13.5px;margin-bottom:10px;color:var(--ink2)}
+.ctl label b{color:var(--ink);font-weight:700}
+.ctl input[type=range]{width:100%;height:28px;background:transparent;-webkit-appearance:none;appearance:none;cursor:pointer}
+.ctl input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(90deg,#d3a869,#8a5530 55%,#4a2b18)}
+.ctl input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:linear-gradient(90deg,#d3a869,#8a5530 55%,#4a2b18)}
+.ctl input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--gold);border:3px solid var(--panel);margin-top:-9px;box-shadow:0 0 0 1px var(--gold)}
+.ctl input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--panel);box-shadow:0 0 0 1px var(--gold)}
+.ctl__ends{display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-top:2px}
+.read{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:start;margin-top:18px}
+.bean{width:56px;height:56px;border-radius:50% 50% 50% 50%/58% 58% 42% 42%;background:#8a5a30;position:relative;box-shadow:inset 0 -6px 10px rgba(0,0,0,.35),inset 0 5px 8px rgba(255,255,255,.12);transition:background .15s}
+.bean::after{content:'';position:absolute;left:50%;top:10%;bottom:10%;width:2px;margin-left:-1px;background:rgba(0,0,0,.4);border-radius:2px;transform:rotate(8deg)}
+.read h3{font-family:var(--serif);font-size:22px;line-height:1.4;margin-bottom:4px}
+.read p{font-size:14.5px;color:var(--ink2);line-height:1.85}
+.read a{display:inline-block;margin-top:6px;font-size:13.5px;color:var(--gold);text-underline-offset:4px}
+.log__note{margin-top:14px;font-size:12px;color:var(--ink3);line-height:1.7}
+
+/* CONCEPT */
+.con{display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:start}
+.con__q{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.2vw,42px);line-height:1.5;letter-spacing:.03em;margin-bottom:28px}
+.con__b{color:var(--ink2);max-width:33em}
+.plist{list-style:none;border-top:1px solid var(--line)}
+.plist li{display:grid;grid-template-columns:11.5em 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.plist b{font-family:var(--serif);font-size:18px;font-weight:700}
+.plist span{color:var(--ink2);font-size:14.5px;line-height:1.85}
+
+/* JOURNEY */
+.jr{list-style:none;border-top:1px solid var(--line2)}
+.jr__row{display:grid;grid-template-columns:72px 13em 1fr 19em;gap:28px;align-items:start;padding:30px 0;border-bottom:1px solid var(--line)}
+.jr__no{font-family:var(--serif);font-size:38px;line-height:1;color:var(--gold);font-weight:500}
+.jr__t{font-family:var(--serif);font-size:23px;font-weight:700;line-height:1.4}
+.jr__t small{display:block;font-family:var(--sans);font-size:12.5px;color:var(--ink3);font-weight:400;margin-top:4px}
+.jr__d{color:var(--ink2);font-size:14.5px;max-width:34em}
+.jr__links{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.jr__links a{font-size:13.5px;color:var(--ink);text-underline-offset:4px;text-decoration-color:var(--line2)}
+.jr__links a:hover{color:var(--gold);text-decoration-color:var(--gold)}
+.jr__thumb{width:132px;height:auto;border-radius:3px;margin-top:14px}
+
+/* STORY */
+.st{display:grid;grid-template-columns:5fr 6fr;gap:72px;align-items:start}
+.st__ph{position:relative}
+.st__ph img.p1{width:100%;border-radius:6px}
+.st__ph .cap{font-size:12.5px;color:var(--ink3);margin-top:10px}
+.st__ph img.p2{width:58%;border-radius:6px;margin:-64px 0 0 auto;position:relative;border:6px solid var(--bg2)}
+.st__q{font-family:var(--serif);font-weight:700;font-size:clamp(25px,3vw,36px);line-height:1.6;margin-bottom:26px;letter-spacing:.03em}
+.st__t p{color:var(--ink2);max-width:34em;margin-bottom:14px}
+.st__t p.st__q{color:var(--ink);max-width:none}
+.tl{list-style:none;margin:30px 0 34px;border-left:1px solid var(--line2);padding-left:26px}
+.tl li{position:relative;padding:0 0 18px;font-size:14.5px;color:var(--ink2)}
+.tl li::before{content:'';position:absolute;left:-31px;top:.7em;width:9px;height:9px;border-radius:50%;background:var(--bg2);border:1.5px solid var(--gold)}
+.tl li:last-child{padding-bottom:0}
+.tl li:last-child::before{background:var(--gold)}
+.tl b{color:var(--ink);font-weight:700}
+.st__act{display:flex;flex-wrap:wrap;gap:10px}
+
+/* COLUMNS */
+.more{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+
+/* PODCAST */
+.pf{display:grid;grid-template-columns:5fr 6fr;gap:0;background:var(--panel);border:1px solid var(--line2);border-radius:10px;overflow:hidden}
+.pf__img{position:relative;min-height:340px}
+.pf__img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pf__b{padding:38px 40px}
+.pf__meta{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;font-size:13px;color:var(--ink3);margin-bottom:12px}
+.pf__meta b{color:var(--gold);font-family:var(--serif);font-size:16px}
+.pf h3{font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);line-height:1.55;margin-bottom:8px}
+.pf__g{font-size:13.5px;color:var(--ink2);margin-bottom:16px}
+.pf p.d{font-size:14.5px;color:var(--ink2);margin-bottom:22px}
+.pf audio{width:100%;height:44px;margin-bottom:6px;accent-color:var(--gold)}
+.pf__cap{font-size:12px;color:var(--ink3);margin-bottom:18px}
+.pl{list-style:none;margin-top:44px;border-top:1px solid var(--line2)}
+.pl li{display:grid;grid-template-columns:5.5em 1fr 16em 4em;gap:20px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.pl .n{font-family:var(--serif);color:var(--gold);font-weight:700}
+.pl .t{font-family:var(--serif);font-size:16.5px;font-weight:500;line-height:1.6}
+.pl .g,.pl .m{color:var(--ink3);font-size:13px}
+.snd{margin-top:28px;background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:28px 32px 26px}
+.snd h3{font-family:var(--serif);font-size:20px;margin-bottom:6px}
+.snd__lead{font-size:14.5px;color:var(--ink2);margin-bottom:22px;max-width:44em}
+.snd__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.snd__i{border-top:1px solid var(--line2);padding-top:14px}
+.snd__i b{display:block;font-family:var(--serif);font-size:17px;margin-bottom:2px}
+.snd__i small{display:block;color:var(--gold);font-size:12.5px;margin-bottom:8px}
+.snd__i p{font-size:13.5px;color:var(--ink2);line-height:1.8;margin-bottom:12px}
+.snd audio{width:100%;height:40px;accent-color:var(--gold)}
+.snd__note{margin-top:18px;font-size:12px;color:var(--ink3);line-height:1.7}
+.pl__h{font-family:var(--serif);font-size:19px;font-weight:700;margin:52px 0 14px}
+
+/* ASMR */
+#asmr{background:#0e0805;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.am{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
+.am h2{font-family:var(--serif);font-weight:700;font-size:clamp(28px,3.6vw,44px);line-height:1.5;letter-spacing:.03em;margin-bottom:18px}
+.am__t p{color:var(--ink2);max-width:30em;margin-bottom:14px}
+.am__tips{list-style:none;margin-top:22px;border-top:1px solid var(--line)}
+.am__tips li{padding:11px 0;border-bottom:1px solid var(--line);font-size:14px;color:var(--ink2)}
+.am__tips b{color:var(--ink);font-weight:700;margin-right:.6em}
+.ap{background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:28px 28px 24px}
+.ap__hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:18px}
+.ap__hd b{font-family:var(--serif);font-size:19px}
+.ap__hd span{font-size:12.5px;color:var(--ink3)}
+.ap__now{font-family:var(--serif);font-size:24px;line-height:1.4;margin-bottom:2px}
+.ap__sub{font-size:13.5px;color:var(--ink2);min-height:3.4em;margin-bottom:16px}
+.ap__bar{position:relative;display:flex;height:10px;border-radius:5px;overflow:hidden;margin-bottom:6px;cursor:pointer;background:var(--bg)}
+.ap__bar i{display:block;height:100%;border-right:2px solid var(--panel)}
+.ap__bar i:last-of-type{border-right:0}
+.ap__head{position:absolute;top:-3px;bottom:-3px;width:3px;background:var(--ink);border-radius:2px;left:0;pointer-events:none;box-shadow:0 0 0 2px rgba(20,12,7,.7)}
+.ap__time{display:flex;justify-content:space-between;font-size:12px;color:var(--ink3);margin-bottom:16px}
+.ap audio{width:100%;height:44px;accent-color:var(--gold);margin-bottom:14px}
+.ap__ch{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ap__ch button{font-family:var(--sans);font-size:13px;line-height:1.4;text-align:left;color:var(--ink2);background:transparent;border:1px solid var(--line);border-radius:4px;padding:9px 11px;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+.ap__ch button small{display:block;color:var(--ink3);font-size:11.5px}
+.ap__ch button:hover{border-color:var(--line2);color:var(--ink)}
+.ap__ch button[aria-current="true"]{border-color:var(--gold);color:var(--ink);background:rgba(217,160,77,.09)}
+.ap__ft{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:var(--ink2)}
+.ap__ft label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.ap__ft input{accent-color:var(--gold);width:16px;height:16px}
+.ap__note{margin-top:14px;font-size:12px;color:var(--ink3);line-height:1.7}
+
+/* SHOP */
+.shop{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
+.shop__ph{position:relative}
+.shop__ph img.b{width:100%;max-width:362px;border-radius:6px}
+.shop__logo{position:absolute;right:0;bottom:-26px;background:#fff;border-radius:6px;padding:10px 16px;width:172px}
+.shop__logo img{width:100%}
+.shop h3{font-family:var(--serif);font-size:clamp(26px,3.2vw,38px);line-height:1.5;margin-bottom:6px}
+.shop .sub{color:var(--ink2);margin-bottom:22px}
+.spec{border-top:1px solid var(--line);margin-bottom:26px}
+.spec div{display:grid;grid-template-columns:8em 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.spec dt{color:var(--ink3)}
+.spec dd b{font-family:var(--serif);font-size:22px}
+.shop__act{display:flex;flex-wrap:wrap;gap:10px}
+
+.lu{margin-top:72px;padding-top:44px;border-top:1px solid var(--line2)}
+.lu h3{font-family:var(--serif);font-size:clamp(21px,2.5vw,27px);margin-bottom:6px}
+.lu__lead{color:var(--ink2);font-size:14.5px;margin-bottom:26px}
+.lu__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.lu__c{display:flex;flex-direction:column;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:26px 26px 24px}
+.lu__tag{font-size:12.5px;color:var(--gold);margin-bottom:10px}
+.lu__c h4{font-family:var(--serif);font-size:22px;line-height:1.4;margin-bottom:10px}
+.lu__c p{font-size:14px;color:var(--ink2);line-height:1.85;margin-bottom:14px}
+.lu__meta{font-size:13px;color:var(--ink);margin-bottom:14px;border-top:1px solid var(--line);padding-top:12px}
+.lu__c .btn{margin-top:auto;align-self:flex-start}
+.lu__note{margin-top:18px;font-size:12px;color:var(--ink3);line-height:1.7}
+
+/* GUIDE */
+.gd{display:grid;grid-template-columns:1fr 1fr;gap:0 64px;border-top:1px solid var(--line2)}
+.gd__i{padding:24px 0;border-bottom:1px solid var(--line)}
+.gd__i h3{font-family:var(--serif);font-size:20px;margin-bottom:6px;display:flex;align-items:baseline;gap:12px}
+.gd__i h3 small{font-family:var(--sans);font-size:12.5px;color:var(--ink3);font-weight:400}
+.gd__i p{font-size:14.5px;color:var(--ink2);margin-bottom:6px}
+.gd__i a{font-size:13.5px;color:var(--gold);text-underline-offset:4px}
+
+/* FAQ */
+.fq{max-width:52em;border-top:1px solid var(--line2)}
+.fq details{border-bottom:1px solid var(--line)}
+.fq summary{list-style:none;cursor:pointer;padding:22px 44px 22px 0;font-family:var(--serif);font-size:18.5px;font-weight:700;line-height:1.6;position:relative}
+.fq summary::-webkit-details-marker{display:none}
+.fq summary::after{content:'+';position:absolute;right:6px;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:24px;font-weight:400;color:var(--gold);transition:transform .2s}
+.fq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.fq .a{padding:0 44px 24px 0;color:var(--ink2);font-size:15px;max-width:40em}
+
+/* CTA */
+#cta{padding:120px 0;background:var(--bg2);border-top:1px solid var(--line)}
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.cta h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px,4vw,50px);line-height:1.5;letter-spacing:.03em;margin-bottom:20px}
+.cta p{color:var(--ink2);max-width:28em}
+.lead{background:var(--panel);border:1px solid var(--line2);border-radius:10px;padding:32px}
+.lead label{display:block;font-size:13.5px;color:var(--ink2);margin-bottom:6px}
+.lead input,.lead select{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line2);border-radius:4px;padding:13px 14px;margin-bottom:18px}
+.lead input::placeholder{color:var(--ink3)}
+.lead input:focus,.lead select:focus{border-color:var(--gold);outline:none;box-shadow:0 0 0 3px rgba(217,160,77,.25)}
+.lead .btn{width:100%}
+.lead__st{margin-top:14px;font-size:14px;min-height:1.6em}
+.lead__st.ok{color:var(--sage)}
+.lead__st.ng{color:var(--wine)}
+.lead__alt{margin-top:18px;font-size:13px;color:var(--ink3)}
+.lead__alt a{color:var(--gold);text-underline-offset:4px}
+
+@media(max-width:1000px){
+  .hero__grid,.con,.st,.shop,.cta{grid-template-columns:1fr;gap:48px}
+  .jr__row{grid-template-columns:56px 1fr;gap:10px 20px}
+  .jr__d,.jr__links{grid-column:2}
+  .pf{grid-template-columns:1fr}
+  .pf__img{min-height:240px}
+  .pl li{grid-template-columns:4.5em 1fr;gap:4px 16px}
+  .pl .g,.pl .m{grid-column:2}
+  .am{grid-template-columns:1fr;gap:40px}
+  .lu__grid{grid-template-columns:1fr 1fr}
+  .gd{grid-template-columns:1fr}
+  .snd__grid{grid-template-columns:1fr}
+  .st__ph img.p2{width:50%}
+  .shop__logo{position:static;margin-top:18px}
+}
+@media(max-width:640px){
+  .sec{padding:76px 0}
+  #hero{padding-top:calc(var(--hd) + 44px)}
+  .hero__stats{gap:22px}
+  .stat b{font-size:28px}
+  .log{padding:16px}
+  .log .ax,.log .axt{font-size:16px}
+  .log .ev text,.log .drop text{font-size:18px}
+  .plist li{grid-template-columns:1fr;gap:4px}
+  .pf__b{padding:26px 22px}
+  .snd{padding:22px 20px}
+  .lu__grid{grid-template-columns:1fr}
+  .ap{padding:22px 18px}
+  .ap__ch{grid-template-columns:1fr 1fr}
+  .lead{padding:24px 20px}
+  .fq summary{font-size:17px}
+  .spec div{grid-template-columns:6em 1fr}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "焙煎ノート", "url": "https://YOUR-DOMAIN.example/", "description": "珈琲が一杯のカップになるまでを深く読み解く、自家焙煎の編集コラム。", "inLanguage": "ja"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "「深煎りはカフェインが少ない」は本当ですか？", "acceptedAnswer": {"@type": "Answer", "text": "カフェイン自体は高温に強く、焙煎による分解はごくわずかとされます。豆の重量あたりでは焙煎度による差は大きくありません。ただし深煎りは豆が膨らんで軽くなるため、スプーンなど同じ体積で量ると重量は少なくなりやすく、結果として差が出ることがあります。正確に比べたいときは、重量で量るのがおすすめです。"}}, {"@type": "Question", "name": "焙煎した豆は、いつまでに飲めばいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "焙煎日から2週間程度が飲み頃のピークとされることが多いですが、焙煎度や豆の種類によって幅があります。「いつ焼かれた豆か」を意識することが、一杯の質を左右します。"}}, {"@type": "Question", "name": "冷蔵庫や冷凍庫で保存してもいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "選択肢ではありますが、出し入れの際の温度差で容器内に結露が生じ、かえって劣化を早める場合があります。使い切れる量をこまめに購入し、直射日光の当たらない常温の暗所で、密閉できる容器に入れるのが最もシンプルで確実です。"}}, {"@type": "Question", "name": "焙煎のあとに、なぜハンドピックが必要なのですか？", "acceptedAnswer": {"@type": "Answer", "text": "高温の焙煎工程を経ると、焼けムラのある豆や割れた豆など、新たな欠点豆が生まれます。細かな色ムラや焼け方の違いは、今も熟練した人の目に頼る部分が大きく、この工程を省かないことが雑味のない一杯を支えています。"}}, {"@type": "Question", "name": "はじめての一杯には、どの豆がおすすめですか？", "acceptedAnswer": {"@type": "Answer", "text": "ヤキマメヤ店主の渡部さんは、看板ブレンドの「市が尾ブレンド」からの入口を勧めています。ブラジル・コロンビア・グァテマラの3産地を個別に焙煎してから合わせた、中煎り（シティーロースト）のバランスのよい一杯です。豆のまま・粉挽きの両方から選べます。"}}, {"@type": "Question", "name": "会員登録をすると、何が届きますか？", "acceptedAnswer": {"@type": "Answer", "text": "ヤキマメヤオーナーコラムを、いち早くお届けします。焙煎ノートは毎週金曜に更新しています。"}}]}</script>
+</head>
+<body>
+<header class="hd" id="top">
+  <div class="hd__in">
+    <a class="logo" href="#hero" aria-label="焙煎ノート トップへ">
+      <span class="logo__mark">煎</span>
+      <span class="logo__txt"><b>焙煎ノート</b><small>Roaster's Journal</small></span>
+    </a>
+    <nav class="hd__nav" id="hdNav" aria-label="メインメニュー"><a href="#concept">コンセプト</a><a href="#journey">一杯までの工程</a><a href="#story">店主の物語</a><a href="#columns">コラム</a><a href="#podcast">ポッドキャスト</a><a href="#asmr">焙煎ASMR</a><a href="#guide">選び方</a><a href="#faq">よくある質問</a></nav>
+    <div class="hd__cta">
+      <a class="btn btn--ghost btn--sm hd__store" href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">オンラインストア</a>
+      <a class="btn btn--gold btn--sm" href="#cta">会員登録</a>
+      <button class="hd__burger" id="hdBurger" aria-expanded="false" aria-controls="hdNav" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<main>
+
+<section id="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <p class="hero__pre">自家焙煎珈琲の編集コラム「焙煎ノート」</p>
+      <h1 class="hero__h1">焙煎という、<br>対話。</h1>
+      <p class="hero__sub">直火の轟音、ハンドピックの静寂。生豆が一杯のカップになるまでの全工程を、<strong>科学と職人技の両面から深く読み解きます。</strong></p>
+      <div class="hero__act">
+        <a class="btn btn--gold" href="#columns">コラムを読む</a>
+        <a class="btn btn--ghost" href="#cta">会員登録する</a>
+      </div>
+      <div class="hero__stats">
+        <div class="stat"><b>12<i>本</i></b><span>公開中のコラム</span></div>
+        <div class="stat"><b>8<i>回</i></b><span>ポッドキャスト</span></div>
+        <div class="stat"><b>約8<i>分</i></b><span>平均の読了時間</span></div>
+      </div>
+    </div>
+    <div class="log" role="group" aria-labelledby="logTtl">
+      <div class="log__hd"><h2 id="logTtl">焙煎記録票</h2><span>直火式・1釜のイメージ</span></div>
+      <svg id="roastSvg" viewBox="0 0 640 420" role="img" aria-label="直火焙煎の温度カーブのイメージ図。投入後に豆温度が一度下がり、黄変、1ハゼ、2ハゼを経て上昇していく。"></svg>
+      <div class="ctl">
+        <label for="dropRange"><span>排出のタイミングを動かす</span><b id="dropVal"></b></label>
+        <input id="dropRange" type="range" min="9" max="14.6" step="0.05" value="11.6">
+        <div class="ctl__ends"><span>早い（浅煎り）</span><span>遅い（深煎り）</span></div>
+        <div class="read" aria-live="polite">
+          <div class="bean" id="bean" aria-hidden="true"></div>
+          <div><h3 id="zoneName"></h3><p id="zoneTxt"></p><a href="column/roast-level/index.html">焙煎度の違いをコラムで読む</a></div>
+        </div>
+      </div>
+      <p class="log__note">※ 焙煎の流れを説明するためのイメージ図です。実際の温度・時間は、豆・焙煎機・気温や湿度で変わります。</p>
+    </div>
+  </div>
+</section>
+
+<section id="concept" class="sec sec--alt">
+  <div class="wrap con">
+    <div>
+      <p class="con__q">珈琲は、もはや<br>「嗜好品」ではない。</p>
+      <p class="con__b">焙煎ノートは、生豆の選定、焙煎機の火加減、ハンドピックの一粒一粒、抽出の一滴まで、コーヒー豆が一杯のカップになるまでの全工程を読み解く編集コラムです。産地の物語、焙煎士の哲学、抽出と保存の知恵。一杯の珈琲に宿る本当の価値を、複数の視点から紐解きます。</p>
+    </div>
+    <ul class="plist">
+      <li><b>焙煎技術の解説</b><span>直火・熱風・半熱風、火力と時間が生む味の違いを語ります。</span></li>
+      <li><b>生豆の目利き</b><span>産地・精製方法・グレードから、一粒の物語を読み解きます。</span></li>
+      <li><b>焙煎士の哲学</b><span>自家焙煎店を取材し、豆と向き合う流儀を紐解きます。</span></li>
+      <li><b>淹れ方と保存</b><span>抽出と保存まで、一杯を極めるための知恵をまとめます。</span></li>
+      <li><b>音声で深掘り</b><span>焙煎士本人の声で、文章では伝わらない熱量を届けます。</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="journey" class="sec">
+  <div class="wrap">
+    <div class="sh"><div class="sh__lab">一杯までの工程</div><h2>一粒の生豆が、一杯になるまで</h2><p>工程の順に、読んでおきたいコラムを並べました。気になる工程から入っても読めます。</p></div>
+    <ol class="jr">
+<li class="jr__row"><span class="jr__no" aria-hidden="true">1</span>
+  <div class="jr__t">生豆を選ぶ<small>産地・標高・精製方法</small></div>
+  <div class="jr__d">世界中から選び抜かれる生豆は、何を基準に評価されているのか。チェリーが生豆になるまでの道のりから、味の方向性を読み解く。</div>
+  <div class="jr__links"><a href="column/specialty-beans/index.html">スペシャルティコーヒーの生豆とは</a><a href="column/cherry-to-bean/index.html">コーヒーチェリーから生豆になるまで</a></div></li>
+<li class="jr__row"><span class="jr__no" aria-hidden="true">2</span>
+  <div class="jr__t">直火で焼く<small>焙煎機と焙煎度</small></div>
+  <div class="jr__d">火を直接当てて豆の芯まで通す伝統の技法と、焙煎度という一本のダイヤルが香りと酸味をどう変えるか。<img class="jr__thumb" src="images/roasting-drum.jpg" alt="直火式焙煎機のドラムの中で焼かれる豆" width="275" height="183" loading="lazy"></div>
+  <div class="jr__links"><a href="column/direct-fire/index.html">直火焙煎とは何か</a><a href="column/roast-level/index.html">浅煎り・中煎り・深煎りの違い</a></div></li>
+<li class="jr__row"><span class="jr__no" aria-hidden="true">3</span>
+  <div class="jr__t">一粒ずつ選ぶ<small>ハンドピック</small></div>
+  <div class="jr__d">焙煎を終えた豆を、もう一度人の目と手で選別する。地味だが省けない、雑味を遠ざける最後の砦。</div>
+  <div class="jr__links"><a href="column/handpick/index.html">なぜ焙煎後にハンドピックが必要なのか</a></div></li>
+<li class="jr__row"><span class="jr__no" aria-hidden="true">4</span>
+  <div class="jr__t">ブレンドする<small>豆の掛け合わせ</small></div>
+  <div class="jr__d">複数の豆の長所を掛け合わせ、単一の豆では届かない完成度を目指す。看板ブレンドに込められた設計思想。</div>
+  <div class="jr__links"><a href="column/blend-making/index.html">ブレンドコーヒーの発想</a><a href="column/ichigao-blend-signature/index.html">看板商品「市が尾ブレンド」に込められた設計思想</a></div></li>
+<li class="jr__row"><span class="jr__no" aria-hidden="true">5</span>
+  <div class="jr__t">保存する<small>鮮度を守る</small></div>
+  <div class="jr__d">酸素・湿気・光・熱が敵。焙煎日を意識し、使い切れる量を冷暗所で。鮮度を長持ちさせる基本ルール。</div>
+  <div class="jr__links"><a href="column/bean-storage/index.html">コーヒー豆の保存方法</a></div></li>
+<li class="jr__row"><span class="jr__no" aria-hidden="true">6</span>
+  <div class="jr__t">淹れる<small>ドリップ抽出</small></div>
+  <div class="jr__d">湯温、蒸らし、粉と湯の比率。家庭で実践できる基本から、自分にとってちょうどいい一杯を見つける。</div>
+  <div class="jr__links"><a href="column/drip-basics/index.html">家庭で淹れる一杯を格上げする、ドリップ抽出の基本</a></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="story" class="sec sec--alt">
+  <div class="wrap st">
+    <div class="st__ph">
+      <img class="p1" src="images/founder-portrait.jpg" alt="焙煎機の前に立つヤキマメヤ店主・渡部さん" width="1024" height="794" loading="lazy">
+      <p class="cap">ヤキマメヤ 店主・渡部さん</p>
+      <img class="p2" src="images/storefront.jpg" alt="横浜市青葉区・市が尾駅近くのヤキマメヤの店頭" width="1200" height="961" loading="lazy">
+    </div>
+    <div class="st__t">
+      <div class="sh" style="margin-bottom:26px"><div class="sh__lab">店主インタビュー</div><h2>不動産経営から、珈琲探究の道へ</h2></div>
+      <p class="st__q">「自分が作ったもので、お客さんに喜んでもらいたい。」</p>
+      <p>横浜市青葉区・市が尾駅近くの自家焙煎珈琲豆店「ヤキマメヤ」店主、渡部さん。前職は不動産会社の経営者で、主にチェーン店の出店物件を仲介する仕事をしていました。</p>
+      <ol class="tl">
+        <li><b>コロナ禍。</b>仲介先の飲食店が撤退する中、時間ができて趣味でハンドドリップを始める。</li>
+        <li>独学の末、本来1年かかる通信講座を<b>わずか4か月で修了</b>し、資格を取得。</li>
+        <li>家庭用焙煎機での火入れに限界を感じ、業務用焙煎機を求める。</li>
+        <li>西東京の深煎りの名店に自ら足を運び、<b>弟子入り</b>。</li>
+        <li>不動産業を離れ、市が尾に「ヤキマメヤ」を開業。今は常時16〜18種類の豆を揃える。</li>
+      </ol>
+      <div class="st__act">
+        <a class="btn btn--gold" href="column/watanabe-story-blueprints-to-beans/index.html">転身記を読む</a>
+        <a class="btn btn--ghost" href="#podcast">ポッドキャストで聴く</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="columns" class="sec">
+  <div class="wrap">
+    <div class="sh"><div class="sh__lab">コラム</div><h2>焙煎技術から抽出まで、じっくり読む12本</h2><p>カテゴリで絞り込んで、気になるテーマから。毎週金曜に更新しています。</p></div>
+    <div class="filters" id="cfilters" role="group" aria-label="コラムのカテゴリで絞り込む"><button type="button" data-cat="all" aria-pressed="true">すべて</button><button type="button" data-cat="焙煎士インタビュー" aria-pressed="false">焙煎士インタビュー</button><button type="button" data-cat="ブレンド" aria-pressed="false">ブレンド</button><button type="button" data-cat="焙煎技術" aria-pressed="false">焙煎技術</button><button type="button" data-cat="ハンドピック" aria-pressed="false">ハンドピック</button><button type="button" data-cat="生豆・産地" aria-pressed="false">生豆・産地</button><button type="button" data-cat="抽出" aria-pressed="false">抽出</button><button type="button" data-cat="保存" aria-pressed="false">保存</button><button type="button" data-cat="健康効果" aria-pressed="false">健康効果</button></div>
+    <div class="cgrid" id="cgrid">
+<a class="ccard ccard--feature" style="--c:var(--wine)" data-cat="焙煎士インタビュー" href="column/watanabe-story-blueprints-to-beans/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">焙煎士インタビュー</span><span>2026.07.19</span><span>読了 8分</span></span>
+    <h3 class="ccard__title">不動産社長から珈琲焙煎士への転身 ― ヤキマメヤ店主・渡部さんの探究記</h3>
+    <p class="ccard__ex">チェーン店の出店仲介をしていた不動産経営者が、コロナ禍のハンドドリップをきっかけにわずか数年でプロの珈琲焙煎士へ。ヤキマメヤ店主・渡部さんの転身記。</p>
+  </span><img class="ccard__img" src="images/glossy-beans.jpg" alt="" width="362" height="290" loading="lazy">
+</a><a class="ccard" style="--c:var(--gold)" data-cat="ブレンド" href="column/ichigao-blend-signature/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">ブレンド</span><span>2026.07.19</span><span>読了 7分</span></span>
+    <h3 class="ccard__title">看板商品「市が尾ブレンド」に込められた設計思想 ― 中煎りが導く、香りとバランスの一杯</h3>
+    <p class="ccard__ex">ブラジル・コロンビア・グァテマラのスペシャルティ豆を組み合わせた、ヤキマメヤの看板ブレンド。中煎り(シティーロースト)が生み出す、酸味・苦味・コク・甘みのバランスを解説する。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--gold)" data-cat="焙煎技術" href="column/direct-fire/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">焙煎技術</span><span>2026.06.30</span><span>読了 7分</span></span>
+    <h3 class="ccard__title">直火焙煎とは何か ― 豆の芯まで火を通す、伝統の技法</h3>
+    <p class="ccard__ex">直火式の焙煎機はなぜ今も選ばれ続けるのか。1釜1釜、豆と対話するように焙煎する理由を探る。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--bronze)" data-cat="ハンドピック" href="column/handpick/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">ハンドピック</span><span>2026.06.23</span><span>読了 8分</span></span>
+    <h3 class="ccard__title">なぜ焙煎後にハンドピックが必要なのか ― 一粒一粒に向き合う理由</h3>
+    <p class="ccard__ex">焙煎を終えた豆を、なぜもう一度人の目と手で選別するのか。地味だが欠かせない最後の工程を取材した。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--gold)" data-cat="焙煎技術" href="column/roast-level/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">焙煎技術</span><span>2026.06.16</span><span>読了 7分</span></span>
+    <h3 class="ccard__title">浅煎り・中煎り・深煎りの違い ― 焙煎度が変える香りと酸味</h3>
+    <p class="ccard__ex">同じ豆でも焙煎度が変われば別の飲み物になる。浅煎り・中煎り・深煎り、それぞれが引き出す個性を解説する。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--sage)" data-cat="生豆・産地" href="column/specialty-beans/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">生豆・産地</span><span>2026.06.09</span><span>読了 8分</span></span>
+    <h3 class="ccard__title">スペシャルティコーヒーの生豆とは ― 産地とグレードが語る品質</h3>
+    <p class="ccard__ex">世界中から選び抜かれる生豆は、何を基準に評価されているのか。産地・標高・グレードから読み解く。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--sage)" data-cat="生豆・産地" href="column/cherry-to-bean/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">生豆・産地</span><span>2026.06.02</span><span>読了 8分</span></span>
+    <h3 class="ccard__title">コーヒーチェリーから生豆になるまで ― 精製方法の違いを知る</h3>
+    <p class="ccard__ex">赤い果実だったコーヒーチェリーが、生豆になるまでの道のり。ウォッシュト・ナチュラル・ハニー、精製方法で味は大きく変わる。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--wine)" data-cat="抽出" href="column/drip-basics/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">抽出</span><span>2026.05.26</span><span>読了 7分</span></span>
+    <h3 class="ccard__title">家庭で淹れる一杯を格上げする、ドリップ抽出の基本</h3>
+    <p class="ccard__ex">せっかくの焙煎豆も、淹れ方次第で味が変わる。お湯の温度、注ぎ方、蒸らし時間 ― 家庭で実践できる基本を紹介する。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--bronze)" data-cat="保存" href="column/bean-storage/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">保存</span><span>2026.05.19</span><span>読了 7分</span></span>
+    <h3 class="ccard__title">コーヒー豆の保存方法 ― 鮮度を守る温度・湿度・容器の選び方</h3>
+    <p class="ccard__ex">焙煎したての豆も、保存方法を誤ればあっという間に風味が落ちる。鮮度を長持ちさせるための基本ルールをまとめた。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--gold)" data-cat="ブレンド" href="column/blend-making/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">ブレンド</span><span>2026.05.12</span><span>読了 8分</span></span>
+    <h3 class="ccard__title">ブレンドコーヒーの発想 ― 豆の個性を掛け合わせる焙煎士の仕事</h3>
+    <p class="ccard__ex">単一の豆では出せない味を、複数の豆を組み合わせて作り出す。ブレンド設計に込められた焙煎士の発想を紐解く。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--wine)" data-cat="焙煎士インタビュー" href="column/roaster-interview/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">焙煎士インタビュー</span><span>2026.05.05</span><span>読了 8分</span></span>
+    <h3 class="ccard__title">自家焙煎店主に聞く、一釜に込める哲学</h3>
+    <p class="ccard__ex">来る日も来る日も、豆と向き合い続ける自家焙煎店の店主たち。その仕事への向き合い方を取材した。</p>
+  </span>
+</a><a class="ccard" style="--c:var(--sage)" data-cat="健康効果" href="column/caffeine-roast/index.html">
+  <span class="ccard__body">
+    <span class="ccard__meta"><span class="catdot"></span><span class="ccard__cat">健康効果</span><span>2026.04.28</span><span>読了 7分</span></span>
+    <h3 class="ccard__title">焙煎度とカフェイン量の関係 ― 深煎りは本当にカフェインが少ないのか</h3>
+    <p class="ccard__ex">「深煎りはカフェインが少ない」という説はどこまで本当なのか。焙煎とカフェイン量の関係を整理する。</p>
+  </span>
+</a>
+    </div>
+    <div class="more">
+      <a class="btn btn--ghost" href="column/index.html">すべてのコラム（12本）を見る</a>
+    </div>
+  </div>
+</section>
+
+<section id="podcast" class="sec sec--alt">
+  <div class="wrap">
+    <div class="sh"><div class="sh__lab">ポッドキャスト</div><h2>焙煎士の声で聴く、音声版コラム</h2><p>焙煎士やバイヤー、バリスタ本人の声で。文章では伝わらない現場の熱量を届けます。</p></div>
+    <article class="pf">
+      <div class="pf__img"><img src="images/storefront.jpg" alt="ヤキマメヤの店頭" loading="lazy"></div>
+      <div class="pf__b">
+        <div class="pf__meta"><b>EP.07</b><span>焙煎士インタビュー</span><span>約15分</span></div>
+        <h3>人生の二周目、最高の深煎りを求めて ― ヤキマメヤ店主・渡部さんの転身劇</h3>
+        <p class="pf__g">ゲスト: 渡部さん（ヤキマメヤ 店主）</p>
+        <p class="d">不動産会社の経営者から、自家焙煎珈琲豆店の店主へ。パーソナリティのサキとタクが、ヤキマメヤ渡部さんの波瀾万丈な転身劇に迫る特別回。</p>
+        <audio controls preload="none" src="audio/ep07-watanabe-interview.m4a">お使いのブラウザは音声の再生に対応していません。</audio>
+        <p class="pf__cap">再生ボタンで、そのままこのページで聴けます。</p>
+        <a class="btn btn--ghost btn--sm" href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">ヤキマメヤのオンラインストア</a>
+      </div>
+    </article>
+    <div class="snd">
+      <h3>焙煎中の音を聴く</h3>
+      <p class="snd__lead">焙煎士は、豆のはぜる音で火を止めるタイミングを判断します（<a href="column/direct-fire/index.html" style="color:var(--gold);text-underline-offset:4px">直火焙煎とは何か</a>）。焙煎の各段階の音を、順に聴き比べられます。</p>
+      <div class="snd__grid">
+        <div class="snd__i"><b>ドラムの回転と火の音</b><small>投入〜乾燥</small><p>回転するドラムの中で豆が転がる低い音と、ガスの炎の音。焙煎のあいだ、ずっと続く背景の音です。</p><audio controls preload="none" src="audio/roast-drum.mp3">音声の再生に対応していません。</audio></div>
+        <div class="snd__i"><b>1ハゼ</b><small>パチパチと乾いた音</small><p>豆の内部が膨らみ、パチパチとはぜ始める。ここから味の設計の本番です。</p><audio controls preload="none" src="audio/roast-1st-crack.mp3">音声の再生に対応していません。</audio></div>
+        <div class="snd__i"><b>2ハゼ</b><small>ピキピキと高く細かい音</small><p>さらに温度が上がると、より高く、細かい音に変わります。深煎りの目安です。</p><audio controls preload="none" src="audio/roast-2nd-crack.mp3">音声の再生に対応していません。</audio></div>
+      </div>
+    </div>
+    <h3 class="pl__h">そのほかのエピソード</h3>
+    <ul class="pl" style="margin-top:0">
+<li><span class="n">EP.08</span><span class="t">看板ブレンドが生まれるまで ― 「市が尾ブレンド」開発秘話</span><span class="g">ゲスト: 渡部さん（ヤキマメヤ 店主）</span><span class="m">20分</span></li><li><span class="n">EP.06</span><span class="t">コーヒーと健康 ― カフェインとの正しい付き合い方</span><span class="g">ゲスト: 管理栄養士</span><span class="m">27分</span></li><li><span class="n">EP.05</span><span class="t">ブレンド設計の裏側 ― 焙煎士がブレンドに込める発想</span><span class="g">ゲスト: 自家焙煎店 店主</span><span class="m">31分</span></li><li><span class="n">EP.04</span><span class="t">家庭でも本格ドリップ ― 抽出のコツを声で解説</span><span class="g">ゲスト: バリスタ</span><span class="m">22分</span></li><li><span class="n">EP.03</span><span class="t">ハンドピックという静かな仕事 ― 効率と品質のジレンマ</span><span class="g">ゲスト: 焙煎所スタッフ</span><span class="m">25分</span></li><li><span class="n">EP.02</span><span class="t">スペシャルティコーヒーの生豆はどう選ばれるか ― バイヤーとの対談</span><span class="g">ゲスト: 生豆商社 バイヤー</span><span class="m">34分</span></li><li><span class="n">EP.01</span><span class="t">直火焙煎の&quot;音&quot;を聞き分ける ― 焙煎士がラジオで語る職人技</span><span class="g">ゲスト: 自家焙煎店 焙煎士</span><span class="m">28分</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="asmr" class="sec">
+  <div class="wrap am">
+    <div class="am__t">
+      <div class="sh" style="margin-bottom:24px"><div class="sh__lab">焙煎ASMR</div></div>
+      <h2>焙煎の音に、<br>ただ浸る。</h2>
+      <p>豆を投入してから排出まで、約8分。ドラムの回転、炎の音、1ハゼ、2ハゼ、そして冷却。一釜の流れを、音だけで通して聴けます。</p>
+      <p>作業や就寝前のBGMにも。ループ再生に対応しています。</p>
+      <ul class="am__tips">
+        <li><b>おすすめ</b>イヤホン・ヘッドホン（左右に広がるステレオ音源）</li>
+        <li><b>音量</b>小さめから。ハゼの音は突然、大きく聞こえます</li>
+        <li><b>尺</b>実際の焙煎（十数分）を約8分に凝縮しています</li>
+      </ul>
+    </div>
+    <div class="ap" id="ap">
+      <div class="ap__hd"><b>一釜ぶんの焙煎音</b><span>約8分 ／ ステレオ</span></div>
+      <div class="ap__now" id="apNow">投入・乾燥</div>
+      <p class="ap__sub" id="apSub"></p>
+      <div class="ap__bar" id="apBar" role="presentation"></div>
+      <div class="ap__time"><span id="apCur">0:00</span><span>8:00</span></div>
+      <audio id="apAudio" controls preload="none" src="audio/roast-asmr.mp3">音声の再生に対応していません。</audio>
+      <div class="ap__ch" id="apCh" role="group" aria-label="工程へ移動"></div>
+      <div class="ap__ft"><label><input type="checkbox" id="apLoop">ループ再生する</label></div>
+    </div>
+  </div>
+</section>
+
+<section id="shop" class="sec">
+  <div class="wrap shop">
+    <div class="shop__ph">
+      <img class="b" src="images/glossy-beans.jpg" alt="深煎りで光沢のある焙煎豆" width="362" height="290" loading="lazy">
+      <div class="shop__logo"><img src="images/yakimameya-logo.png" alt="ヤキマメヤ COFFEE ROASTERS" width="218" height="132" loading="lazy"></div>
+    </div>
+    <div>
+      <div class="sh" style="margin-bottom:20px"><div class="sh__lab">ヤキマメヤの豆</div></div>
+      <h3>まず、市が尾ブレンドから。</h3>
+      <p class="sub">コラムで読んだ焙煎の考え方を、実際の一杯で確かめてください。</p>
+      <dl class="spec">
+        <div><dt>産地</dt><dd>ブラジル・コロンビア・グァテマラ</dd></div>
+        <div><dt>焙煎度</dt><dd>中煎り（シティーロースト）</dd></div>
+        <div><dt>味わい</dt><dd>香り高く、酸味・苦味・コク・甘みがバランスよく同居するマイルドな飲み口</dd></div>
+        <div><dt>価格</dt><dd><b>100gあたり780円</b>（税込）／豆のまま・粉挽きから選べます</dd></div>
+      </dl>
+      <div class="shop__act">
+        <a class="btn btn--gold" href="https://yakimameya.base.shop/items/81969958" target="_blank" rel="noopener noreferrer">市が尾ブレンドを購入する</a>
+        <a class="btn btn--ghost" href="column/ichigao-blend-signature/index.html">設計思想を読む</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="lu">
+      <h3>ヤキマメヤのラインアップ</h3>
+      <p class="lu__lead">市が尾ブレンドのほかにも、ヤキマメヤでは季節に応じて豆を入れ替えながら、常時16〜18種類を揃えています。</p>
+      <div class="lu__grid"><article class="lu__c"><span class="lu__tag">ブレンド</span><h4>ヤキマメヤブレンド</h4><p>ヤキマメヤの名を冠したブレンドです。味わいや配合の詳細は、オンラインストアでご確認ください。</p><a class="btn btn--ghost btn--sm" href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">オンラインストアで見る</a></article><article class="lu__c"><span class="lu__tag">産地：ブラジル</span><h4>ブラジル</h4><p>産地の一般的な傾向として、ナッツやチョコレートを思わせる丸みのある味わいと語られることが多い産地です。</p><a class="btn btn--ghost btn--sm" href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">オンラインストアで見る</a></article><article class="lu__c"><span class="lu__tag">産地：コスタリカ</span><h4>コスタリカ</h4><p>産地の一般的な傾向として、高地で栽培される豆が多く、明るい酸味と甘みが特徴とされる産地です。</p><a class="btn btn--ghost btn--sm" href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">オンラインストアで見る</a></article></div>
+      <p class="lu__note">※ 産地の説明は一般的な傾向です。各商品の焙煎度・価格・在庫は、オンラインストアでご確認ください。</p>
+    </div>
+  </div>
+</section>
+
+<section id="guide" class="sec sec--alt">
+  <div class="wrap">
+    <div class="sh"><div class="sh__lab">焙煎豆の選び方</div><h2>パッケージの裏側を読む、5つの目利きポイント</h2><p>豆を手に取ったとき、どこを見れば「本質的な価値」がわかるのか。</p></div>
+    <div class="gd"><div class="gd__i"><h3>産地・品種<small>生豆のルーツを知る</small></h3><p>標高・農園・品種まで追える豆は、栽培から精製まで品質管理が一貫している目安になります。</p><a href="column/specialty-beans/index.html">詳しく読む</a></div><div class="gd__i"><h3>精製方法<small>ウォッシュト／ナチュラル／ハニー</small></h3><p>ウォッシュトはクリーンで酸味が際立ち、ナチュラルは果実由来の甘みが出やすい。同じ豆でも精製で味の方向が変わります。</p><a href="column/cherry-to-bean/index.html">詳しく読む</a></div><div class="gd__i"><h3>焙煎度<small>浅煎り〜深煎り</small></h3><p>浅煎りは酸味と香り、中煎りはバランス、深煎りは苦味とコク。好みと抽出方法に合わせて選びます。</p><a href="column/roast-level/index.html">詳しく読む</a></div><div class="gd__i"><h3>焙煎日<small>鮮度は生命線</small></h3><p>飲み頃のピークは焙煎日から2週間程度が目安。「いつ焼かれたか」は「どこで採れたか」と同じくらい大切です。</p><a href="column/bean-storage/index.html">詳しく読む</a></div><div class="gd__i"><h3>保存状態<small>冷暗所・密閉容器</small></h3><p>酸素・湿気・光・熱が劣化の大敵。使い切れる量をこまめに購入し、常温の暗所で密閉して保存します。</p><a href="column/bean-storage/index.html">詳しく読む</a></div></div>
+  </div>
+</section>
+
+<section id="faq" class="sec">
+  <div class="wrap">
+    <div class="sh"><div class="sh__lab">よくある質問</div><h2>珈琲豆と焙煎のこと、よく聞かれること</h2></div>
+    <div class="fq">
+<details><summary>「深煎りはカフェインが少ない」は本当ですか？</summary><div class="a"><p>カフェイン自体は高温に強く、焙煎による分解はごくわずかとされます。豆の重量あたりでは焙煎度による差は大きくありません。ただし深煎りは豆が膨らんで軽くなるため、スプーンなど同じ体積で量ると重量は少なくなりやすく、結果として差が出ることがあります。正確に比べたいときは、重量で量るのがおすすめです。 <a href="column/caffeine-roast/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
+<details><summary>焙煎した豆は、いつまでに飲めばいいですか？</summary><div class="a"><p>焙煎日から2週間程度が飲み頃のピークとされることが多いですが、焙煎度や豆の種類によって幅があります。「いつ焼かれた豆か」を意識することが、一杯の質を左右します。 <a href="column/bean-storage/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
+<details><summary>冷蔵庫や冷凍庫で保存してもいいですか？</summary><div class="a"><p>選択肢ではありますが、出し入れの際の温度差で容器内に結露が生じ、かえって劣化を早める場合があります。使い切れる量をこまめに購入し、直射日光の当たらない常温の暗所で、密閉できる容器に入れるのが最もシンプルで確実です。 <a href="column/bean-storage/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
+<details><summary>焙煎のあとに、なぜハンドピックが必要なのですか？</summary><div class="a"><p>高温の焙煎工程を経ると、焼けムラのある豆や割れた豆など、新たな欠点豆が生まれます。細かな色ムラや焼け方の違いは、今も熟練した人の目に頼る部分が大きく、この工程を省かないことが雑味のない一杯を支えています。 <a href="column/handpick/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
+<details><summary>はじめての一杯には、どの豆がおすすめですか？</summary><div class="a"><p>ヤキマメヤ店主の渡部さんは、看板ブレンドの「市が尾ブレンド」からの入口を勧めています。ブラジル・コロンビア・グァテマラの3産地を個別に焙煎してから合わせた、中煎り（シティーロースト）のバランスのよい一杯です。豆のまま・粉挽きの両方から選べます。 <a href="column/ichigao-blend-signature/index.html" style="color:var(--gold);text-underline-offset:4px">関連コラムを読む</a></p></div></details>
+<details><summary>会員登録をすると、何が届きますか？</summary><div class="a"><p>ヤキマメヤオーナーコラムを、いち早くお届けします。焙煎ノートは毎週金曜に更新しています。</p></div></details>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="wrap cta">
+    <div>
+      <h2>一杯の珈琲に、<br>もっと深く出会う。</h2>
+      <p>焙煎ノートに会員登録すると、ヤキマメヤオーナーコラムをいち早くお届けします。毎週金曜更新。</p>
+    </div>
+    <form class="lead" id="leadForm" data-endpoint="https://formsubmit.co/ajax/ykfuruya0703@gmail.com" novalidate>
+      <label for="lf-mail">メールアドレス</label>
+      <input id="lf-mail" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+      <label for="lf-int">いちばん読みたいテーマ（任意）</label>
+      <select id="lf-int" name="interest">
+        <option value="">選ばない</option>
+        <option>焙煎技術</option><option>生豆・産地</option><option>抽出と保存</option><option>焙煎士インタビュー</option>
+      </select>
+      <input type="hidden" name="_subject" value="【焙煎ノート】会員登録">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <input type="text" name="_honey" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:0;width:0;opacity:0">
+      <button type="submit" class="btn btn--gold">会員登録する</button>
+      <p class="lead__st" id="leadSt" role="status" aria-live="polite"></p>
+      <p class="lead__alt">豆をお探しの方は <a href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">ヤキマメヤ オンラインストア</a> へ。</p>
+    </form>
+  </div>
+</section>
+
+</main>
+<footer class="ft">
+  <div class="wrap ft__grid">
+    <div>
+      <a class="logo" href="#top"><span class="logo__mark">煎</span><span class="logo__txt"><b>焙煎ノート</b><small>Roaster's Journal</small></span></a>
+      <p class="ft__desc">生豆の目利きから直火焙煎、ハンドピック、抽出、保存まで。珈琲が一杯のカップになるまでを深く読み解く、自家焙煎の編集コラムです。</p>
+    </div>
+    <div>
+      <h4>読む・聴く</h4>
+      <ul>
+        <li><a href="column/index.html">コラム一覧</a></li>
+        <li><a href="#podcast">ポッドキャスト</a></li>
+        <li><a href="#journey">一杯までの工程</a></li>
+        <li><a href="#guide">焙煎豆の選び方</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>ヤキマメヤ</h4>
+      <ul>
+        <li><a href="https://yakimameya.base.shop/" target="_blank" rel="noopener noreferrer">オンラインストア</a></li>
+        <li><a href="#story">店主・渡部さんの物語</a></li>
+        <li><a href="#shop">市が尾ブレンド</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>このサイト</h4>
+      <ul>
+        <li><a href="#cta">会員登録</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap ft__bottom"><span>© 2026 焙煎ノート. All rights reserved.</span><span>一粒の火入れに、宿る手仕事を。</span></div>
+</footer>
+<script>(function(){var b=document.getElementById('hdBurger'),n=document.getElementById('hdNav');if(!b||!n)return;
+function set(o){n.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'メニューを閉じる':'メニューを開く')}
+b.addEventListener('click',function(){set(!n.classList.contains('open'))});
+n.addEventListener('click',function(ev){if(ev.target.tagName==='A')set(false)});
+document.addEventListener('keydown',function(ev){if(ev.key==='Escape')set(false)})})();</script>
+<script>
+(function(){
+  /* --- 焙煎記録票 --- */
+  var P=[[0,190],[.5,150],[1.2,112],[1.8,100],[3,118],[4.5,140],[6,158],[8,179],[9.5,196],[11,208],[12.5,219],[13,224],[14,229],[15,233]];
+  var L=54,R=18,T0=26,B=48,VW=640,VH=420,W=VW-L-R,H=VH-T0-B,TMAX=15,TMIN=80,TTOP=250;
+  function X(t){return L+t/TMAX*W}
+  function Y(v){return T0+(TTOP-v)/(TTOP-TMIN)*H}
+  function cr(a,b,c,d,u){var u2=u*u,u3=u2*u;return .5*((2*b)+(-a+c)*u+(2*a-5*b+4*c-d)*u2+(-a+3*b-3*c+d)*u3)}
+  var S=[];
+  for(var i=0;i<P.length-1;i++){
+    var p0=P[Math.max(i-1,0)],p1=P[i],p2=P[i+1],p3=P[Math.min(i+2,P.length-1)];
+    for(var k=0;k<10;k++){var u=k/10;S.push([cr(p0[0],p1[0],p2[0],p3[0],u),cr(p0[1],p1[1],p2[1],p3[1],u)])}
+  }
+  S.push(P[P.length-1]);
+  function tempAt(t){for(var i=1;i<S.length;i++){if(S[i][0]>=t){var a=S[i-1],b=S[i],f=(t-a[0])/((b[0]-a[0])||1);return a[1]+(b[1]-a[1])*f}}return S[S.length-1][1]}
+  function path(upTo){var d='';for(var i=0;i<S.length;i++){if(S[i][0]>upTo)break;d+=(d?'L':'M')+X(S[i][0]).toFixed(1)+' '+Y(S[i][1]).toFixed(1)}
+    d+='L'+X(upTo).toFixed(1)+' '+Y(tempAt(upTo)).toFixed(1);return d}
+  var svg=document.getElementById('roastSvg');if(!svg)return;
+  var NS='http://www.w3.org/2000/svg';
+  function el(n,a,txt){var x=document.createElementNS(NS,n);for(var k in a)x.setAttribute(k,a[k]);if(txt!=null)x.textContent=txt;return x}
+  var g=el('g',{});svg.appendChild(g);
+  [100,150,200,250].forEach(function(v){g.appendChild(el('line',{x1:L,x2:VW-R,y1:Y(v),y2:Y(v),'class':'gl'}));g.appendChild(el('text',{x:L-10,y:Y(v)+4,'text-anchor':'end','class':'ax'},v))});
+  [0,3,6,9,12,15].forEach(function(t){g.appendChild(el('line',{x1:X(t),x2:X(t),y1:T0,y2:VH-B,'class':'gl'}));g.appendChild(el('text',{x:X(t),y:VH-B+20,'text-anchor':'middle','class':'ax'},t))});
+  g.appendChild(el('text',{x:L+W/2,y:VH-6,'text-anchor':'middle','class':'axt'},'経過時間（分）'));
+  g.appendChild(el('text',{x:12,y:T0-10,'class':'axt'},'豆温度（℃）'));
+  var bg=el('path',{d:path(TMAX),'class':'curve-bg'});g.appendChild(bg);
+  var cv=el('path',{d:path(11.6),'class':'curve',pathLength:1});g.appendChild(cv);
+  var EV=[['投入',0,14,-12,'start'],['中点',1.8,-4,26,'middle'],['黄変',5.5,-6,26,'middle'],['1ハゼ',9.5,-12,-14,'end'],['2ハゼ',13,-12,-14,'end']];
+  var ev=el('g',{'class':'ev'});
+  EV.forEach(function(e){var x=X(e[1]),y=Y(tempAt(e[1]));ev.appendChild(el('circle',{cx:x,cy:y,r:4.5}));ev.appendChild(el('text',{x:x+e[2],y:y+e[3],'text-anchor':e[4]},e[0]))});
+  g.appendChild(ev);
+  var drop=el('g',{'class':'drop'});
+  var dl=el('line',{}),dc=el('circle',{r:7}),dt=el('text',{'text-anchor':'middle'});
+  drop.appendChild(dl);drop.appendChild(dc);drop.appendChild(dt);g.appendChild(drop);
+
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce){
+    cv.style.strokeDasharray=1;cv.style.strokeDashoffset=1;
+    bg.style.opacity=0;drop.style.opacity=0;ev.style.opacity=0;
+    requestAnimationFrame(function(){
+      cv.style.transition='stroke-dashoffset 2.6s cubic-bezier(.4,.1,.2,1)';cv.style.strokeDashoffset=0;
+      [bg,ev,drop].forEach(function(n){n.style.transition='opacity .8s ease 1.9s';n.style.opacity=1});
+    });
+    cv.addEventListener('transitionend',function(){cv.style.strokeDasharray='none';cv.style.transition='none'});
+  }
+
+  var ZONES=[
+   {max:10.6,name:'浅煎り',txt:'豆本来の酸味やフルーティーな香りが際立ち、産地ごとの個性が最も分かりやすく表れる。爽やかな飲み口を求める人に向く焙煎度。'},
+   {max:12.8,name:'中煎り（シティーロースト）',txt:'酸味と苦味のバランスが取れたマイルドな味わい。幅広い抽出方法に対応しやすい万能タイプで、普段飲みの一杯に近い。'},
+   {max:99,name:'深煎り',txt:'糖分がしっかりカラメル化し、苦味とコクが主体の重厚な味わいに。豆の表面に油分が浮き、光沢が出る。'}];
+  var rng=document.getElementById('dropRange'),tv=document.getElementById('dropVal'),zn=document.getElementById('zoneName'),zt=document.getElementById('zoneTxt'),bean=document.getElementById('bean');
+  function mix(a,b,f){return Math.round(a+(b-a)*f)}
+  function update(){
+    var t=parseFloat(rng.value),T=tempAt(t),x=X(t),y=Y(T);
+    cv.setAttribute('d',path(t));
+    dl.setAttribute('x1',x);dl.setAttribute('x2',x);dl.setAttribute('y1',y);dl.setAttribute('y2',VH-B);
+    dc.setAttribute('cx',x);dc.setAttribute('cy',y);
+    dt.setAttribute('x',Math.min(x,VW-46));dt.setAttribute('y',y-16);dt.textContent='排出';
+    var m=Math.floor(t),s=Math.round((t-m)*60);if(s===60){m++;s=0}
+    var z=ZONES.filter(function(z){return t<z.max})[0];
+    tv.textContent=m+'分'+(s<10?'0':'')+s+'秒 ／ 約'+Math.round(T)+'℃';
+    if(zn.textContent!==z.name){zn.textContent=z.name;zt.textContent=z.txt}
+    var f=(t-9)/(14.6-9);
+    bean.style.background='rgb('+mix(199,43,f)+','+mix(154,23,f)+','+mix(94,13,f)+')';
+    rng.setAttribute('aria-valuetext',z.name+'、'+tv.textContent);
+  }
+  rng.addEventListener('input',update);update();
+})();
+
+/* --- コラム絞り込み --- */
+(function(){
+  var grid=document.getElementById('cgrid');if(!grid)return;
+  var cards=[].slice.call(grid.querySelectorAll('.ccard')),btns=[].slice.call(document.querySelectorAll('#cfilters button'));
+  var cat='all',LIM=5;
+  function render(){
+    var n=0;
+    cards.forEach(function(c){
+      var ok=cat==='all'||c.getAttribute('data-cat')===cat;
+      c.hidden=!ok;
+      if(ok){n++;if(cat==='all'&&n>LIM)c.hidden=true}
+    });
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){cat=b.getAttribute('data-cat');btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});render()})});
+  render();
+})();
+
+
+/* --- 焙煎ASMR --- */
+(function(){
+  var au=document.getElementById('apAudio');if(!au)return;
+  var CH=[
+   {t:0,n:'投入・乾燥',d:'ガスの炎と、ドラムの回転。豆が転がり始めます。',c:'#7f6a4a'},
+   {t:45,n:'黄変',d:'水分が抜け、色が黄色から薄茶へ。音は少しずつ乾いていきます。',c:'#a07f45'},
+   {t:190,n:'1ハゼ',d:'パチパチと乾いた音。密度が高まり、やがて落ち着いていきます。',c:'#d9a04d'},
+   {t:300,n:'発達',d:'ハゼが収まり、静かに火が通る時間。仕上げの見極めどころです。',c:'#b57f31'},
+   {t:380,n:'2ハゼ',d:'ピキピキと高く細かい音。深煎りの領域に入ります。',c:'#a4432f'},
+   {t:450,n:'排出・冷却',d:'豆をトレイに出し、冷却ファンで一気に冷やします。',c:'#5c7086'}];
+  var TOT=480,bar=document.getElementById('apBar'),chw=document.getElementById('apCh'),now=document.getElementById('apNow'),sub=document.getElementById('apSub'),cur=document.getElementById('apCur');
+  var head=document.createElement('div');head.className='ap__head';
+  function fmt(s){s=Math.floor(s);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2)}
+  CH.forEach(function(c,i){
+    var end=i<CH.length-1?CH[i+1].t:TOT,seg=document.createElement('i');seg.style.width=((end-c.t)/TOT*100)+'%';seg.style.background=c.c;bar.appendChild(seg);
+    var b=document.createElement('button');b.type='button';b.innerHTML=c.n+'<small>'+fmt(c.t)+'</small>';
+    b.addEventListener('click',function(){au.currentTime=c.t;au.play()});chw.appendChild(b);
+  });
+  bar.appendChild(head);
+  bar.addEventListener('click',function(e){var r=bar.getBoundingClientRect();var d=au.duration||TOT;au.currentTime=(e.clientX-r.left)/r.width*d});
+  var last=-1;
+  function upd(){
+    var t=au.currentTime||0,d=au.duration||TOT;head.style.left='calc('+(t/d*100)+'% - 1px)';cur.textContent=fmt(t);
+    var k=0;for(var i=0;i<CH.length;i++){if(t>=CH[i].t)k=i}
+    if(k!==last){last=k;now.textContent=CH[k].n;sub.textContent=CH[k].d;[].forEach.call(chw.children,function(b,i){b.setAttribute('aria-current',i===k)})}
+  }
+  au.addEventListener('timeupdate',upd);au.addEventListener('seeked',upd);au.addEventListener('loadedmetadata',upd);
+  document.getElementById('apLoop').addEventListener('change',function(e){au.loop=e.target.checked});
+  upd();
+})();
+
+/* --- 会員登録フォーム --- */
+(function(){
+  var f=document.getElementById('leadForm');if(!f)return;
+  var st=document.getElementById('leadSt'),ENDPOINT=f.getAttribute('data-endpoint')||'';
+  var MAIL=(ENDPOINT.split('/ajax/')[1]||'');
+  function sayHtml(h,c){st.innerHTML=h;st.className='lead__st '+c}
+  function mailtoLink(){
+    var em=(f.querySelector('[name=email]').value||'').trim(),it=(f.querySelector('[name=interest]').value||'');
+    var body='会員登録を希望します。\nメールアドレス: '+em+'\n読みたいテーマ: '+(it||'指定なし');
+    return 'mailto:'+MAIL+'?subject='+encodeURIComponent('【焙煎ノート】会員登録')+'&body='+encodeURIComponent(body);
+  }
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    function say(m,c){st.textContent=m;st.className='lead__st '+c}
+    var mail=f.querySelector('[name=email]');
+    if(!mail.value||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(mail.value)){say('メールアドレスを正しく入力してください。','ng');mail.focus();return}
+    if(!ENDPOINT){say('現在、登録受付の準備中です。恐れ入りますが、しばらくしてからもう一度お試しください。','ng');return}
+    if(location.protocol==='file:'){
+      sayHtml('このページをファイルとして直接開いているため、送信できません（公開後のURL、またはローカルサーバー上では送信できます）。'+(MAIL?' いま登録する場合は <a href="'+mailtoLink()+'" style="color:var(--gold);text-underline-offset:4px">メールソフトで登録する</a> をご利用ください。':''),'ng');return}
+    var btn=f.querySelector('button[type=submit]');btn.disabled=true;say('送信しています…','');
+    fetch(ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){return r.json().catch(function(){return {}}).then(function(d){return {ok:r.ok,d:d}})})
+      .then(function(x){
+        var ok=x.ok&&(x.d.success===true||x.d.success==='true');
+        if(ok){say('登録を受け付けました。ヤキマメヤオーナーコラムのお届けをお待ちください。','ok');f.reset()}
+        else{
+          var m=(x.d&&x.d.message)||'';
+          if(/web server/i.test(m)){sayHtml('Webサーバー経由で開いていないため送信できません。公開URLか、ローカルサーバー上で開いてください。'+(MAIL?' <a href="'+mailtoLink()+'" style="color:var(--gold);text-underline-offset:4px">メールソフトで登録する</a>':''),'ng')}
+          else if(/activat/i.test(m)){say('現在、受付の準備中です。しばらくしてからもう一度お試しください。','ng')}
+          else{say('送信を完了できませんでした。'+(m?'（'+m+'）':'時間をおいて、もう一度お試しください。'),'ng')}
+        }
+      })
+      .catch(function(){say('送信できませんでした。通信状況を確認して、もう一度お試しください。','ng')})
+      .then(function(){btn.disabled=false});
+  });
+})();
+</script>
+</body>
+</html>
